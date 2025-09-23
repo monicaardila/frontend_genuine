@@ -40,6 +40,7 @@ function App() {
       <section id="JoinGenuine" className="section">
         <JoinGenuine />
       </section>
+      
       {/* Sidebar */}
       <Sidebar />
     </div>

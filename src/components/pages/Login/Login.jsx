@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // 👈 importar
-import "./Login.css"; // Importa los estilos
-const API_URL = import.meta.env.VITE_API_URL;
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import apiService from "../../../services/api";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,24 +11,20 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     try {
-      const response = await fetch(`${API_URL}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard"); // 👈 redirige al dashboard
-      } else {
-        setError(data.error || "Error al iniciar sesión");
-      }
+      console.log("🔐 Attempting login...");
+      const data = await apiService.login({ email, password });
+      
+      console.log("✅ Login successful, token received:", !!data.access_token);
+      localStorage.setItem("token", data.access_token);
+      
+      // Redirigir al dashboard o a la página principal
+      navigate("/dashboard");
     } catch (err) {
-      setError("Error de conexión con el servidor");
+      console.error("❌ Login failed:", err);
+      setError(err.message || "Error al iniciar sesión");
     }
   };
 
