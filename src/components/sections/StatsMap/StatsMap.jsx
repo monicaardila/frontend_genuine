@@ -1,6 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
-import "./statsMap.css";
+import "./StatsMap.css";
 import worldMap from "../../../assets/img/mapa.webp";
 import studentsImg from "../../../assets/img/genuine-school-students.webp"; // tu foto
 
