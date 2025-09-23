@@ -1,0 +1,81 @@
+/* Fondo con imagen */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    top: 30px;
+    background: url(".././../../../../src/assets/img/family-hero.jpg") no-repeat center center/cover;
+  }
+  
+  /* Caja del login */
+  .login-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .login-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0f172a;
+  }
+  
+  .login-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .login-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.5);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background: #0f172a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+  }
+  
+  .login-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

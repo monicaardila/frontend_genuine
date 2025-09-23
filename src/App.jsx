@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/sections/Login/Login";
+import Login from "./components/pages/Login/Login.jsx";
 import ProtectedRoute from "./components/common/ProtectedRoute/ProtectedRoute.jsx";
 import LandingPage from "./components/LandingPage.jsx";
-
+import Dashboard from "./components/pages/Dashboard/Dashboard.jsx";
+import Students from "./components/pages/Students/Students.jsx";
 function App() {
   return (
     <Router>
@@ -15,10 +16,19 @@ function App() {
 
         {/* Protegida */}
         <Route
-          path="/dashboard"
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          {/* Ruta para estudiantes */}
+        <Route
+          path="/students"
           element={
             <ProtectedRoute>
-              <h1>Inicio de sesión exitoso 🚀</h1>
+              <Students />
             </ProtectedRoute>
           }
         />

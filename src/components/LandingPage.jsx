@@ -1,6 +1,6 @@
 import React from "react";
 import heroImg from "../assets/img/family-hero.jpg";
-import "./landingPage.css";
+import "./LandingPage.css";
 import About from "../components/sections/About/About";
 import WorldSection from "../components/sections/StatsMap/StatsMap";
 import JoinGenuine from "../components/sections/JoinGenuine/JoinGenuine";

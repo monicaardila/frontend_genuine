@@ -1,0 +1,91 @@
+.students-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .students-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f2937;
+  }
+  
+  .students-search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  }
+  
+  .students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .students-table th,
+  .students-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+  }
+  
+  .students-table th {
+    background: #f3f4f6;
+    font-weight: 600;
+  }
+  
+  .students-table tr:hover {
+    background: #f9fafb;
+  }
+  
+  /* Botones */
+  .btn-edit,
+  .btn-delete,
+  .btn-add,
+  .btn-update {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-edit {
+    background: #2563eb;
+    color: #fff;
+  }
+  
+  .btn-delete {
+    background: #dc2626;
+    color: #fff;
+  }
+  
+  .btn-add {
+    background: #16a34a;
+    color: #fff;
+  }
+  
+  .btn-update {
+    background: #f59e0b;
+    color: #fff;
+  }
+  
+  /* Formulario */
+  .students-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .students-form input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+  }
+  
