@@ -4,7 +4,7 @@ import "./LandingPage.css";
 import About from "../components/sections/About/About";
 import WorldSection from "../components/sections/StatsMap/StatsMap";
 import JoinGenuine from "../components/sections/JoinGenuine/JoinGenuine";
-import Sidebar from "/src/components/common/Sidebar/Sidebar.jsx";
+import Sidebar from "./common/Sidebar/Sidebar.jsx";
 
 
 function App() {
