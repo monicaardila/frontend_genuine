@@ -2,7 +2,7 @@ import React from "react";
 import aboutImg from "../../../assets/img/about-banner.png";
 import rocketImg from "../../../assets/img/cohete.png";
 import eyeImg from "../../../assets/img/ojo.png";
-import "./about.css";
+import "./About.css";
 
 function About() {
   return (
