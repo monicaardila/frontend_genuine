@@ -5,7 +5,7 @@
     align-items: center;
     min-height: 100vh;
     top: 30px;
-    background: url(".././../../../../src/assets/img/family-hero.jpg") no-repeat center center/cover;
+    background: url("../../../../../../src/assets/img/family-hero.jpg") no-repeat center center/cover;
   }
   
   /* Caja del login */
