@@ -15,8 +15,8 @@ class ApiService {
     const url = `${this.baseURL}${endpoint}`;
     const token = this.getAuthToken();
     
-    console.log('🔗 Making API request to:', url);
-    console.log('🔑 Token available:', !!token);
+    console.log('Making API request to:', url);
+    console.log(' Token available:', !!token);
     
     const defaultOptions = {
       headers: {
@@ -35,25 +35,25 @@ class ApiService {
       },
     };
 
-    console.log('📤 Request config:', config);
+    console.log(' Request config:', config);
 
     try {
       const response = await fetch(url, config);
       
-      console.log('📥 Response status:', response.status);
-      console.log('📥 Response headers:', Object.fromEntries(response.headers.entries()));
+      console.log(' Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
       
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('❌ Response error:', errorText);
+        console.error(' Response error:', errorText);
         throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
       }
       
       const data = await response.json();
-      console.log('✅ Response data:', data);
+      console.log('Response data:', data);
       return data;
     } catch (error) {
-      console.error('❌ API request failed:', error);
+      console.error(' API request failed:', error);
       throw error;
     }
   }
