@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./StudentsPageProfessional.css";
 import apiService from "../../../services/api";
+import IconWrapper from "../../../utils/IconWrapper";
 import { 
   FiUsers, 
   FiSearch, 
@@ -22,8 +23,7 @@ import {
   FiX,
   FiSave,
   FiAlertCircle,
-  FiCheckCircle,
-  FiBookOpen
+  FiCheckCircle
 } from "react-icons/fi";
 
 function StudentsPageProfessional() {
@@ -222,7 +222,7 @@ function StudentsPageProfessional() {
         <div className="stats-section">
           <div className="stat-card">
             <div className="stat-icon">
-              <FiUsers />
+              <span className="icon-emoji">👥</span>
             </div>
             <div className="stat-content">
               <div className="stat-number">{students.length}</div>
@@ -240,7 +240,7 @@ function StudentsPageProfessional() {
           </div>
           <div className="stat-card">
             <div className="stat-icon">
-              <FiBookOpen />
+              <FiBook />
             </div>
             <div className="stat-content">
               <div className="stat-number">{totalPages}</div>
@@ -440,7 +440,7 @@ function StudentsPageProfessional() {
                         <tr>
                           <td colSpan="6" className="no-data">
                             <div className="no-data-content">
-                              <FiBookOpen className="no-data-icon" />
+                              <FiBook className="no-data-icon" />
                               <div className="no-data-text">
                                 {search ? "No se encontraron estudiantes que coincidan con la búsqueda" : "No hay estudiantes registrados"}
                               </div>
@@ -512,7 +512,7 @@ function StudentsPageProfessional() {
                   ) : (
                     <div className="no-data">
                       <div className="no-data-content">
-                        <FiBookOpen className="no-data-icon" />
+                        <FiBook className="no-data-icon" />
                         <div className="no-data-text">
                           {search ? "No se encontraron estudiantes que coincidan con la búsqueda" : "No hay estudiantes registrados"}
                         </div>
