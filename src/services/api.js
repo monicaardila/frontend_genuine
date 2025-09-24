@@ -49,6 +49,12 @@ class ApiService {
         throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
       }
       
+      // Para respuestas 204 (No Content), no intentar parsear JSON
+      if (response.status === 204) {
+        console.log('Response data: No content (204)');
+        return null;
+      }
+      
       const data = await response.json();
       console.log('Response data:', data);
       return data;
