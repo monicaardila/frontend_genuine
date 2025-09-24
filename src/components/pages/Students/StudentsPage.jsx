@@ -62,7 +62,20 @@ function StudentsPage() {
       setTimeout(() => setSuccess(""), 3000);
     } catch (error) {
       console.error('Error creating student:', error);
-      setError("Error al crear el estudiante");
+      
+      // Manejar errores específicos
+      if (error.response && error.response.status === 422) {
+        const errorData = error.response.data;
+        if (errorData.errors && errorData.errors.email) {
+          setError(`Error: ${errorData.errors.email[0]}`);
+        } else {
+          setError(`Error de validación: ${errorData.message || 'Datos inválidos'}`);
+        }
+      } else if (error.response && error.response.status === 409) {
+        setError("El email ya está registrado. Por favor usa un email diferente.");
+      } else {
+        setError("Error al crear el estudiante. Inténtalo de nuevo.");
+      }
     } finally {
       setLoading(false);
     }
