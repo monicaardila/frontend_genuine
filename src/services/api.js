@@ -1,8 +1,9 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://compassionate-illumination-production.up.railway.app/api';
 
 class ApiService {
   constructor() {
     this.baseURL = API_URL;
+    console.log('API Service initialized with URL:', this.baseURL);
   }
 
   // Método para obtener el token de autenticación
