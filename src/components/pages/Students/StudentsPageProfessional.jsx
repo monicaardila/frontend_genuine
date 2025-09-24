@@ -148,7 +148,7 @@ function StudentsPageProfessional() {
   };
 
   // Filtrar y ordenar estudiantes
-  const filteredStudents = students
+  const filteredStudents = (Array.isArray(students) ? students : [])
     .filter((student) =>
       student.name.toLowerCase().includes(search.toLowerCase()) ||
       student.email.toLowerCase().includes(search.toLowerCase()) ||

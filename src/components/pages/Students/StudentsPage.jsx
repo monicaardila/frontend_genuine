@@ -26,11 +26,16 @@ function StudentsPage() {
     setLoading(true);
     try {
       const data = await apiService.getStudents();
-      setStudents(data);
+      console.log('API Response:', data);
+      
+      // Asegurar que data sea un array
+      const studentsArray = Array.isArray(data) ? data : (data.data && Array.isArray(data.data) ? data.data : []);
+      setStudents(studentsArray);
       setError("");
     } catch (error) {
       console.error('Error fetching students:', error);
       setError("Error al cargar los estudiantes");
+      setStudents([]); // Establecer array vacío en caso de error
     } finally {
       setLoading(false);
     }
@@ -124,7 +129,7 @@ function StudentsPage() {
   };
 
   // Filtrar y ordenar estudiantes
-  const filteredStudents = students
+  const filteredStudents = (Array.isArray(students) ? students : [])
     .filter((student) =>
       student.name.toLowerCase().includes(search.toLowerCase()) ||
       student.email.toLowerCase().includes(search.toLowerCase()) ||
