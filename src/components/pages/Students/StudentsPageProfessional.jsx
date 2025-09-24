@@ -50,11 +50,16 @@ function StudentsPageProfessional() {
     setLoading(true);
     try {
       const data = await apiService.getStudents();
-      setStudents(data);
+      console.log('API Response:', data);
+      
+      // Asegurar que data sea un array
+      const studentsArray = Array.isArray(data) ? data : (data.data && Array.isArray(data.data) ? data.data : []);
+      setStudents(studentsArray);
       setError("");
     } catch (error) {
       console.error('Error fetching students:', error);
       setError("Error al cargar los estudiantes");
+      setStudents([]); // Establecer array vacío en caso de error
     } finally {
       setLoading(false);
     }
